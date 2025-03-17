@@ -44,7 +44,7 @@ public class ServicoSnacksArchivos implements IServicioSnacks {
     private List<Snack> obtenerSnacks(){
         var snacks = new ArrayList<Snack>();
         try{
-            Files.readAllLines(Paths.get(NOMBRE_ARCHIVO));
+            List<String> lineas = Files.readAllLines(Paths.get(NOMBRE_ARCHIVO));
             for(String linea: lineas){
                 String[] lineaSnack = linea.split(",");
                 var idSnack = lineaSnack[0];
